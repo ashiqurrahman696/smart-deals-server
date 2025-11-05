@@ -56,7 +56,7 @@ const verifyFirebaseToken = async (req, res, next) => {
 }
 
 app.get("/", (req, res) => {
-    res.send("Smart server is running");
+    res.send("Smart deals server is running");
 });
 
 async function run(){
@@ -206,6 +206,11 @@ async function run(){
 }
 run().catch(console.dir);
 
-app.listen(port, () => {
-    console.log(`Smart server is running on port: ${port}`);
-});
+client.connect()
+    .then(() => {
+        app.listen(port, () => {
+            console.log(`Smart server is running now on port: ${port}`)
+        })
+
+    })
+    .catch(console.dir)
