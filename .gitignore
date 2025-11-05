@@ -1,0 +1,4 @@
+node_modules
+.env
+smart-deals-firebase-admin-key.json
+.vercel
